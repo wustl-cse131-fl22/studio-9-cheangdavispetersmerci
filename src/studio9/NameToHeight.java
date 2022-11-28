@@ -20,8 +20,25 @@ public class NameToHeight {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 
-		// FIXME
-		throw new NotYetImplementedException();
-
+		Map<String, String> heightinches = new HashMap<>();
+		heightinches.put("Emily", "66 inches");
+		heightinches.put("Daniel", "68 inches");
+		heightinches.put("Haya", "67 inches");
+		heightinches.put("Mercy", "66 inches");
+		String name = "i";
+		while(!name.equals("quit")) {
+			System.out.println("Name?");
+			name = in.nextLine();
+			boolean trip = false;
+			for(String i : heightinches.keySet()){
+				if(i.equals(name)) {
+					System.out.println(heightinches.get(name));
+					trip = true;
+				}
+			}
+			if (!trip) {
+				System.out.println("null");
+			}
+		}
 	}
 }
